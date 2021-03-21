@@ -39,4 +39,18 @@
     }
 
     Answer: Polynomial time O(n^k); We have to loop through first array to get a value and then loop through the second one to see if we find a matching value.
+
+  4. Doubler
+    What is the Big O of the following algorithm? Explain your answer
+
+    function doubleArrayValues(array) {
+        for (let i = 0; i < array.length; i++) {
+            array[i] *= 2;
+        }
+        return array;
+    }
+
+    Answer: Linear time O(n); We take the array item and have to calculate the muplication of the current index.
+
+  
 */
