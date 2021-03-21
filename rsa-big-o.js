@@ -126,5 +126,14 @@
         return -1;
     }
   
-    Answer:
+    Answer: Logarithmic time O(Log(n)); We evaluate the middle point and split the sorted array in half each time.
+
+  9. Random element
+    What is the Big O of the following algorithm? Explain your answer
+
+    function findRandomElement(arr) {
+        return arr[Math.floor(Math.random() * arr.length)];
+    }
+
+    Answer: Constant time O(1); We return a randomly accessed array element.
 */
