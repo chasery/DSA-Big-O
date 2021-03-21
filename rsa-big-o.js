@@ -38,7 +38,7 @@
         return false;
     }
 
-    Answer: Polynomial time O(n^k); We have to loop through first array to get a value and then loop through the second one to see if we find a matching value.
+    Answer: Exponential time O(2^n); We have to loop through first array to get a value and then loop through the second one to see if we find a matching value.
 
   4. Doubler
     What is the Big O of the following algorithm? Explain your answer
@@ -64,4 +64,17 @@
     }
 
     Answer: Linear time O(n); We have to itterate through the array which them could be all of the way at the end of. So this means you could possibly have to go through n number of times.
+
+  6. Creating pairs:
+    What is the Big O of the following algorithm? Explain your answer
+
+    function createPairs(arr) {
+        for (let i = 0; i < arr.length; i++) {
+            for(let j = i + 1; j < arr.length; j++) {
+                console.log(arr[i] + ", " +  arr[j] );
+            }
+        }
+    }
+
+    Answer: Polynomial time O(n^k); We have to loop through 1 array, loop through another array and then add the values.
 */
