@@ -50,7 +50,18 @@
         return array;
     }
 
-    Answer: Linear time O(n); We take the array item and have to calculate the muplication of the current index.
+    Answer: Linear time O(n); We take each array item and have to calculate the muplication of the current index.
 
-  
+  5. Naive search
+    What is the Big O of the following algorithm? Explain your answer
+
+    function naiveSearch(array, item) {
+        for (let i = 0; i < array.length; i++) {
+            if (array[i] === item) {
+                return i;
+            }
+        }
+    }
+
+    Answer: Linear time O(n); We have to itterate through the array which them could be all of the way at the end of. So this means you could possibly have to go through n number of times.
 */
