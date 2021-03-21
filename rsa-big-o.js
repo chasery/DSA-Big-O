@@ -23,4 +23,20 @@
     }
 
     Answer: Linear time O(n); We get an input into the function where we have to do an evaluation of the 'value % 2' and return a true/false result based on that. It's a one in, one out function.
+  
+  3. Are you here?
+    What is the Big O of the following algorithm? Explain your answer
+
+    function areYouHere(arr1, arr2) {
+        for (let i = 0; i < arr1.length; i++) {
+            const el1 = arr1[i];
+            for (let j = 0; j < arr2.length; j++) {
+                const el2 = arr2[j];
+                if (el1 === el2) return true;
+            }
+        }
+        return false;
+    }
+
+    Answer: Polynomial time O(n^k); We have to loop through first array to get a value and then loop through the second one to see if we find a matching value.
 */
