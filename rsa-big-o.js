@@ -50,7 +50,7 @@
         return array;
     }
 
-    Answer: Linear time O(n); We take each array item and have to calculate the muplication of the current index.
+    Answer: Linear time O(n); We iterate through the array at O(1) and then have to write to the array at O(n) time as it is not at the end.
 
   5. Naive search
     What is the Big O of the following algorithm? Explain your answer
@@ -63,7 +63,7 @@
         }
     }
 
-    Answer: Linear time O(n); We have to itterate through the array which them could be all of the way at the end of. So this means you could possibly have to go through n number of times.
+    Answer: Linear time O(n); We have to iterate through the array which them could be all of the way at the end of. So this means you could possibly have to go through n number of times.
 
   6. Creating pairs:
     What is the Big O of the following algorithm? Explain your answer
@@ -76,5 +76,27 @@
         }
     }
 
-    Answer: Polynomial time O(n^k); We have to loop through 1 array, loop through another array and then add the values.
+    Answer: Polynomial time O(n^k); We have to loop through 1 array, loop through another array.
+
+  7. Compute the sequence
+    What does the following algorithm do? What is its runtime complexity? Explain your answer
+
+    function compute(num) {
+        let result = [];
+        for (let i = 1; i <= num; i++) {
+
+            if (i === 1) {
+                result.push(0);
+            }
+            else if (i === 2) {
+                result.push(1);
+            }
+            else {
+                result.push(result[i - 2] + result[i - 3]);
+            }
+        }
+        return result;
+    }
+
+    Answer: It creates the fibonacci sequence. Constant time O(1) as we access an array and insert at the end. 
 */
