@@ -187,6 +187,186 @@ const tower = (height, srcRod, desRod, tempRod) => {
 
 tower(4, '1', '2', '3');
 
-/* 12. 
-  
+/* 12. a.
+    const countSheep = (count) => {
+      // Base case
+      if (count === 0) {
+        return 'All sheep jumped over the fence';
+      }
+      // General case
+      return (
+        `${count}: Another sheep jumps over the fence \n` + countSheep(count - 1)
+      );
+    };
+
+    Linear time O(n)
 */
+
+const countSheep = (count) => {
+  for (let i = 1; i <= count; i++) {
+    console.log(`${i}: Another sheep jumps over the fence \n`);
+  }
+  console.log('All sheep jumped over the fence');
+  return;
+};
+
+/* 12. b.
+    const powerCalculator = (base, exponent) => {
+      if (exponent >= 0) {
+        // Base case
+        if (exponent === 0) {
+          return 1;
+        }
+        // General case
+        return base * powerCalculator(base, exponent - 1);
+      }
+      return 'exponent should be >= 0';
+    };
+
+    Linear time O(n)
+*/
+
+const powerCalculator = (base, exponent) => {
+  let total = base;
+  for (let i = 1; i < exponent; i++) {
+    total = total * base;
+  }
+  console.log(total);
+  return total;
+};
+
+/* 12. c.
+    const reverseString = (string) => {
+      if (string === '') {
+        return '';
+      } else {
+        return reverseString(string.substr(1)) + string.charAt(0);
+      }
+    };
+    Linear time O(n)
+*/
+
+const reverseString = (string) => {
+  let reversed = '';
+  for (let i = string.length - 1; i >= 0; i--) {
+    reversed += string[i];
+  }
+  console.log(reversed);
+  return reversed;
+};
+
+/* 12. d.
+    const triangularNumber = (num) => {
+      // Base case
+      if (num <= 1) {
+        return 1;
+      }
+      // General case
+      return num + triangularNumber(num - 1);
+    };
+
+    Linear time O(n)
+*/
+
+const triangularNumber = (num) => {
+  let triNum = 0;
+  for (let i = 1; i <= num; i++) {
+    triNum += i;
+  }
+  console.log(triNum);
+  return triNum;
+};
+
+/* 12. e.
+    const stringSplitter = (str, sep, result) => {
+      result = result || [];
+      // Base case
+      if (str.indexOf(sep) === -1) {
+        result.push(str);
+      } else {
+        // General case
+        result.push(str.slice(0, str.indexOf(sep))) +
+          stringSplitter(str.slice(str.indexOf(sep) + 1), sep, result);
+      }
+      return result;
+    };
+
+    Polynomial time O(n^2)
+*/
+
+const stringSplitter = (str, sep) => {
+  let result = [];
+  let prevSep = 0;
+  for (let i = 0; i < str.length; i++) {
+    if (str.charAt(i) === sep) {
+      str.slice(prevSep, i) ? result.push(str.slice(prevSep, i)) : '';
+      prevSep = i + 1;
+    } else if (i === str.length - 1) {
+      result.push(str.slice(prevSep, i + 1));
+    }
+  }
+  console.log(result);
+  return result;
+};
+
+stringSplitter('/02/20/2020//', '/');
+
+/* 12. f.
+    const fibonacci = (num) => {
+      if (num === 1) {
+        return [1];
+      } else if (num === 2) {
+        return [1, 1];
+      } else {
+        const result = fibonacci(num - 1);
+        result.push(result[result.length - 2] + result[result.length - 1]);
+        return result;
+      }
+    };
+
+    Linear time O(n)
+*/
+
+const fibonacci = (num) => {
+  let result = [];
+  for (let i = 0; i < num; i++) {
+    if (i === 0) {
+      result.push(1);
+    } else if (i === 1) {
+      result.push(1);
+    } else {
+      result.push(result[i - 2] + result[i - 1]);
+    }
+  }
+  console.log(result);
+  return result;
+};
+
+fibonacci(9);
+
+/* 12. g.
+    const factorial = (num) => {
+      // Base case
+      if (num === 1) {
+        // Will be the multiplication of 1.
+        return num;
+      } else {
+        // General case
+        // Multiply the number by the number - 1.
+        return num * factorial(num - 1);
+      }
+    };
+    
+    Linear time O(n)
+*/
+
+const factorial = (num) => {
+  let result = num;
+  for (let i = num - 1; i > 0; i--) {
+    result *= i;
+  }
+  console.log(result);
+  return result;
+};
+
+factorial(5);
